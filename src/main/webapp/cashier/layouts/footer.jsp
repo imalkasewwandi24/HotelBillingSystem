@@ -12,25 +12,6 @@
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   <style>
     /* Footer Styles */
-    .main-footer {
-      background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
-      color: white;
-      margin-top: 50px;
-      position: relative;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .footer-content {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 40px;
-      padding: 50px 0 30px;
-    }
 
     .footer-section h5 {
       color: #e7993c;
@@ -79,12 +60,6 @@
       transform: translateX(5px);
     }
 
-    .social-links {
-      display: flex;
-      gap: 15px;
-      margin-top: 20px;
-    }
-
     .social-links a {
       width: 40px;
       height: 40px;
@@ -117,27 +92,9 @@
       text-align: center;
     }
 
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding: 20px 0;
-    }
-
-    .footer-bottom-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
     .footer-bottom p {
       color: #bdc3c7;
       margin: 0;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
     }
 
     .footer-links a {
@@ -152,23 +109,6 @@
     }
 
     /* Back to Top Button */
-    .back-to-top {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      background: linear-gradient(135deg, #e7993c, #d4831f);
-      color: white;
-      border-radius: 50%;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 4px 15px rgba(231, 153, 60, 0.4);
-      transition: all 0.3s ease;
-      z-index: 1000;
-    }
 
     .back-to-top:hover {
       transform: translateY(-3px);
@@ -181,48 +121,10 @@
 
     /* Responsive Footer */
     @media (max-width: 991.98px) {
-      .footer-content {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 30px;
-        padding: 40px 0 20px;
-      }
 
-      .footer-bottom-content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .footer-links {
-        justify-content: center;
-      }
     }
 
     @media (max-width: 576px) {
-      .footer-content {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 30px 0 20px;
-      }
-
-      .footer-container {
-        padding: 0 15px;
-      }
-
-      .social-links {
-        justify-content: center;
-      }
-
-      .footer-links {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-      }
 
       .back-to-top i {
         font-size: 16px;
@@ -230,10 +132,6 @@
     }
 
     /* Footer spacing adjustment for content */
-    .content {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
   </style>
 </head>
 <body>

@@ -20,7 +20,7 @@
             position: fixed;
             width: 280px;
             height: 100vh;
-            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            background: linear-gradient(135deg, #145130 0%, #16833e 100%);
             padding: 0;
             color: white;
             box-shadow: 4px 0 20px rgba(0,0,0,0.1);
@@ -82,22 +82,6 @@
         .sidebar-menu a i {
             width: 20px;
             text-align: center;
-        }
-
-        .sidebar-footer {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 20px;
-            background: rgba(0,0,0,0.1);
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .user-info {
-            font-size: 12px;
-            opacity: 0.85;
-            margin-bottom: 10px;
-            color: white;
         }
 
         .logout-btn {

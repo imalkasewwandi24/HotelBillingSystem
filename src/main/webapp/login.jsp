@@ -175,7 +175,7 @@
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script>
     const text = "Welcome to Ocean View Resort";
-    const speed = 70;
+    const speed = 100;
     let i = 0;
 
     function typeWriter() {

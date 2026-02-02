@@ -22,10 +22,10 @@
         /* Mobile Header */
         .mobile-header {
             display: none;
-            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            background: linear-gradient(135deg, #145130 0%, #16833e 100%);
             color: white;
             padding: 15px 20px;
-            border-left: 4px solid #2ecc71; /* same as sidebar */
+            border-left: 4px solid #145130; /* same as sidebar */
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             top: 0;
@@ -60,10 +60,10 @@
         /* Desktop Top Navbar */
         .top-navbar {
             display: none;
-            background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+            background: linear-gradient(135deg, #145130 0%, #16833e 100%);
             color: white;
             padding: 15px 0;
-            border-left: 4px solid #2ecc71; /* consistent with sidebar */
+            border-left: 4px solid #145130; /* consistent with sidebar */
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             top: 0;
