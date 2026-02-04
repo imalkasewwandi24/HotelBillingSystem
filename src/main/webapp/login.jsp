@@ -80,7 +80,7 @@
         }
 
         .btn-login:hover {
-            background: rgba(0, 232, 205, 0.66);
+            background: #00e8cd;
         }
 
         .feedback, .error-feedback, .alert-success {
@@ -175,7 +175,7 @@
 <script src="assets/js/bootstrap.bundle.min.js"></script>
 <script>
     const text = "Welcome to Ocean View Resort";
-    const speed = 100;
+    const speed = 120;
     let i = 0;
 
     function typeWriter() {

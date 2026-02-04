@@ -5,8 +5,8 @@
   Time: 8:56 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="java.util.List, com.hotelbillingsystem.models.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.List, com.hotelbillingsystem.models.User" %>
 
 <%
   List<User> users = (List<User>) request.getAttribute("users");
@@ -196,4 +196,3 @@
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

@@ -60,11 +60,10 @@
 
         /* Desktop Top Navbar */
         .top-navbar {
-            display: none;
             background: linear-gradient(135deg, #fceabb, #f8b500);
             color: #0c0c0c;
-            padding: 15px 0;
-            border-left: 4px solid #d17b12;
+            padding: 22px 0;   /* 👈 increased height */
+            border-left: 4px solid #fceabb;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
             top: 0;
@@ -81,7 +80,7 @@
         }
 
         .welcome-text {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -186,8 +185,8 @@
 <div class="top-navbar">
     <div class="navbar-container">
         <div class="welcome-text">
-            <i class="fas fa-umbrella-beach"></i>
-            <span class="typewriter-text">Ocean View Resort</span>
+            <i class="fa fa-user"></i>
+            <span>Welcome Admin!</span>
         </div>
         <div class="navbar-right">
             <div class="navbar-item dropdown">

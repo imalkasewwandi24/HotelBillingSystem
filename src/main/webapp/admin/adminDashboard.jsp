@@ -6,31 +6,6 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ page import="com.hotelbillingsystem.models.User" %>
-
-<%--session and cache handling--%>
-<%
-    HttpSession sessionObj = request.getSession(false);
-
-    //Not logged in → go to login
-    if (sessionObj == null || sessionObj.getAttribute("loggedUser") == null) {
-        response.sendRedirect(request.getContextPath() + "/login.jsp");
-        return;
-    }
-
-    //Role mismatch → logout and go to login
-    Integer role = (Integer) sessionObj.getAttribute("role");
-    if (role == null || role != 0) { // 0 = admin
-        sessionObj.invalidate(); // end session
-        response.sendRedirect(request.getContextPath() + "/login.jsp");
-        return;
-    }
-
-    //Prevent browser cache (so back button won't reopen restricted pages)
-    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-    response.setHeader("Pragma", "no-cache");
-    response.setDateHeader("Expires", 0);
-%>
 
 <!DOCTYPE html>
 <html>

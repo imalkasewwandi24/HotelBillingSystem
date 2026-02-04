@@ -5,31 +5,12 @@
   Time: 9:00 AM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="com.hotelbillingsystem.models.User" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="com.hotelbillingsystem.models.User" %>
 
 <%
-    HttpSession sessionObj = request.getSession(false);
-
-    if (sessionObj == null || sessionObj.getAttribute("loggedUser") == null) {
-        response.sendRedirect(request.getContextPath() + "/login.jsp");
-        return;
-    }
-
-    Integer role = (Integer) sessionObj.getAttribute("role");
-    if (role == null || role != 0) {
-        sessionObj.invalidate();
-        response.sendRedirect(request.getContextPath() + "/login.jsp");
-        return;
-    }
-
-    response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
-    response.setHeader("Pragma", "no-cache");
-    response.setDateHeader("Expires", 0);
-
     User editUser = (User) request.getAttribute("editUser");
 %>
-
 <!DOCTYPE html>
 <html>
 <head>
