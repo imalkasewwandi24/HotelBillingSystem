@@ -62,7 +62,7 @@
             display: none;
             background: linear-gradient(135deg, #145130 0%, #16833e 100%);
             color: white;
-            padding: 15px 0;
+            padding: 22px 0;
             border-left: 4px solid #145130; /* consistent with sidebar */
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: fixed;
@@ -80,7 +80,7 @@
         }
 
         .welcome-text {
-            font-size: 18px;
+            font-size: 19px;
             font-weight: 600;
             display: flex;
             align-items: center;
@@ -184,8 +184,8 @@
 <div class="top-navbar">
     <div class="navbar-container">
         <div class="welcome-text">
-            <i class="fas fa-umbrella-beach"></i>
-            <span class="brand-text">Ocean View Resort</span>
+            <i class="fa fa-user"></i>
+            <span>Welcome Cashier!</span>
         </div>
         <div class="navbar-right">
             <div class="navbar-item dropdown">
