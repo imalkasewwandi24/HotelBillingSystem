@@ -490,7 +490,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="addRooms.jsp">
+                        <a href="addRoom.jsp">
                             Add Details <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>

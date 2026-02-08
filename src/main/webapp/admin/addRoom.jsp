@@ -101,7 +101,7 @@
       </div>
 
       <div class="mb-3">
-        <label>Number of Rooms</label>
+        <label>Room Number(Physical)</label>
         <input type="number" name="numberOfRooms" class="form-control" required>
       </div>
 
