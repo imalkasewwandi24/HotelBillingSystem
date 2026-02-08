@@ -72,7 +72,7 @@
                     <th>Room Name</th>
                     <th>Description</th>
                     <th>Price/Night (LKR)</th>
-                    <th>No. of Rooms</th>
+                    <th>Room Number</th>
                     <th>Max Guests</th>
                     <th>Status</th>
                     <th>Actions</th>
