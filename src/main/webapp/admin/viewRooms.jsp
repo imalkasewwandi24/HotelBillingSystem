@@ -80,7 +80,15 @@
                 </thead>
                 <tbody>
                 <% if (rooms != null && !rooms.isEmpty()) {
-                    for (Room r : rooms) { %>
+                    for (Room r : rooms) {
+                <%
+                    String badgeColor = "secondary"; // default
+                    switch (r.getRoomStatus()) {
+                        case "Available": badgeColor = "success"; break;
+                        case "Occupied": badgeColor = "danger"; break;
+                        case "Maintenance": badgeColor = "warning"; break;
+                    }
+                %>
                 <tr>
                     <td><strong><%= r.getRoomCode() %></strong></td>
                     <td><%= r.getRoomName() %></td>
@@ -88,7 +96,11 @@
                     <td><%= r.getPricePerNight() %></td>
                     <td><%= r.getNumberOfRooms() %></td>
                     <td><%= r.getMaxGuests() %></td>
-                    <td><%= r.getRoomStatus() %></td>
+                    <td>
+                        <span class="badge bg-<%= badgeColor %>">
+                          <%= r.getRoomStatus() %>
+                        </span>
+                    </td>
                     <td>
                         <a href="<%= request.getContextPath() %>/admin/EditRoomServlet?roomId=<%= r.getRoomId() %>"
                            class="btn btn-action btn-edit"><i class="fas fa-pen"></i>Edit</a>
