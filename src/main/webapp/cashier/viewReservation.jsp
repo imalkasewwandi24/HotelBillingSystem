@@ -75,7 +75,7 @@
                     <th>Guest Name</th>
                     <th>NIC</th>
                     <th>Contact Number</th>
-                    <th>Room Type</th>
+                    <th>Room Code</th>
                     <th>Check-in</th>
                     <th>Check-out</th>
                     <th>Status</th>

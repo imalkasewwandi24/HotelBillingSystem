@@ -126,7 +126,7 @@
           <th>Address</th>
           <th>Contact</th>
           <th>Email</th>
-          <th>Room Type</th>
+          <th>Room Code</th>
           <th>Check-In</th>
           <th>Check-Out</th>
           <th>Status</th>
