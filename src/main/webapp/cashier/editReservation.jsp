@@ -115,9 +115,9 @@
             </div>
 
             <div class="mb-3">
-                <label>Room Type</label>
+                <label>Room Code</label>
                 <select name="roomType" class="form-control" required>
-                    <option value="">-- Select Room Type --</option>
+                    <option value="">-- Select Room Code --</option>
                     <option value="R001_SINGLE" <%= "R001_SINGLE".equals(reservation.getRoomType()) ? "selected" : "" %>>R001 - Single Room</option>
                     <option value="R002_DOUBLE" <%= "R002_DOUBLE".equals(reservation.getRoomType()) ? "selected" : "" %>>R002 - Double Room</option>
                     <option value="R003_TWIN" <%= "R003_TWIN".equals(reservation.getRoomType()) ? "selected" : "" %>>R003 - Twin Room</option>

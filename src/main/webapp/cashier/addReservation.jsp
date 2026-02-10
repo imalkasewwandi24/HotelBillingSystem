@@ -111,10 +111,9 @@
                 <input type="email" name="email" class="form-control">
             </div>
             <div class="mb-3">
-                <label>Room Type</label>
+                <label>Room Code</label>
                 <select name="roomType" class="form-control" required>
-                    <option value="">-- Select Room Type --</option>
-
+                    <option value="">-- Select Room Code --</option>
                     <option value="R001_SINGLE">R001 - Single Room</option>
                     <option value="R002_DOUBLE">R002 - Double Room</option>
                     <option value="R003_TWIN">R003 - Twin Room</option>

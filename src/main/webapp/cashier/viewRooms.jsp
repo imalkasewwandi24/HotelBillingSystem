@@ -1,21 +1,21 @@
 <%--
   Created by IntelliJ IDEA.
   User: imalka
-  Date: 2/6/2026
-  Time: 7:31 PM
+  Date: 2/9/2026
+  Time: 6:37 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page import="java.util.List, com.hotelbillingsystem.models.Reservation" %>
+<%@ page import="java.util.List, com.hotelbillingsystem.models.Room" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-  List<Reservation> reservations = (List<Reservation>) request.getAttribute("reservations");
+  List<Room> rooms = (List<Room>) request.getAttribute("rooms");
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>All Reservations</title>
+  <title>All Rooms</title>
 
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -100,13 +100,13 @@
   <div class="card-box">
 
     <!-- Search Box -->
-    <form class="search-box" method="get" action="ViewReservationServlet">
+    <form class="search-box" method="get" action="ViewRoomServlet">
       <div class="input-group">
         <input
                 type="text"
                 name="search"
                 class="form-control"
-                placeholder="Search by NIC or Reservation ID"
+                placeholder="Search by Room Code or Name"
                 value="<%= request.getParameter("search") != null ? request.getParameter("search") : "" %>"
         >
         <button class="btn btn-orange" type="submit">
@@ -115,46 +115,47 @@
       </div>
     </form>
 
-    <!-- Reservation Table -->
+    <!-- Rooms Table -->
     <div class="table-responsive">
       <table class="table align-middle">
         <thead>
         <tr>
-          <th>Reservation ID</th>
-          <th>Guest Name</th>
-          <th>NIC</th>
-          <th>Address</th>
-          <th>Contact</th>
-          <th>Email</th>
           <th>Room Code</th>
-          <th>Check-In</th>
-          <th>Check-Out</th>
+          <th>Room Name</th>
+          <th>Description</th>
+          <th>Price/Night</th>
+          <th>No. of Rooms</th>
+          <th>Max Guests</th>
           <th>Status</th>
         </tr>
         </thead>
 
         <tbody>
-        <% if (reservations != null && !reservations.isEmpty()) {
-          for (Reservation r : reservations) { %>
+        <% if (rooms != null && !rooms.isEmpty()) {
+          for (Room r : rooms) {
+            String badgeColor = "secondary"; // default
+            switch (r.getRoomStatus()) {
+              case "Available": badgeColor = "success"; break;
+              case "Occupied": badgeColor = "danger"; break;
+              case "Maintenance": badgeColor = "warning"; break;
+            }
+        %>
         <tr>
-          <td><strong><%= r.getReservationId() %></strong></td>
-          <td><%= r.getGuestName() %></td>
-          <td><%= r.getNic() %></td>
-          <td><%= r.getAddress() %></td>
-          <td><%= r.getContactNumber() %></td>
-          <td><%= r.getEmail() %></td>
-          <td><%= r.getRoomType() %></td>
-          <td><%= r.getCheckInDate() %></td>
-          <td><%= r.getCheckOutDate() %></td>
+          <td><strong><%= r.getRoomCode() %></strong></td>
+          <td><%= r.getRoomName() %></td>
+          <td><%= r.getDescription() %></td>
+          <td><%= r.getPricePerNight() %></td>
+          <td><%= r.getNumberOfRooms() %></td>
+          <td><%= r.getMaxGuests() %></td>
           <td>
-            <span class="badge bg-<%= "CHECKED_IN".equals(r.getStatus()) ? "success" : "secondary" %>">
-              <%= r.getStatus() %>
+            <span class="badge bg-<%= badgeColor %>">
+              <%= r.getRoomStatus() %>
             </span>
           </td>
         </tr>
         <% } } else { %>
         <tr>
-          <td colspan="10" class="text-muted text-center">No reservations found</td>
+          <td colspan="7" class="text-muted text-center">No rooms found</td>
         </tr>
         <% } %>
         </tbody>
@@ -167,3 +168,4 @@
 <script src="../assets/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
