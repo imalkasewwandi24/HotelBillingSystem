@@ -489,7 +489,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <a href="${pageContext.request.contextPath}/cashier/generate-bill.jsp">
+            <a href="${pageContext.request.contextPath}/cashier/generateBill.jsp">
               Generate  <i class="fas fa-arrow-right"></i>
             </a>
           </div>

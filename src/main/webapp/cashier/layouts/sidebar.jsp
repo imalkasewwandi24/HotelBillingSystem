@@ -177,8 +177,8 @@
         <a href="cashierDashboard.jsp" class="active"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
         <a href="addReservation.jsp"><i class="fas fa-user-tie"></i> Add Reservation</a>
         <a href="${pageContext.request.contextPath}/cashier/ViewReservationServlet"><i class="fas fa-calendar-check"></i>Manage Reservations</a>
-        <a href="${pageContext.request.contextPath}/cashier/ViewRoomServlet"><i class="fas fa-bed"></i>  Manage Rooms</a>
-        <a href="${pageContext.request.contextPath}/cashier/generate-bill.jsp"><i class="fas fa-file-invoice-dollar"></i> Generate Bill</a>
+        <a href="${pageContext.request.contextPath}/cashier/ViewRoomServlet"><i class="fas fa-bed"></i>  View Rooms</a>
+        <a href="${pageContext.request.contextPath}/cashier/generateBill.jsp"><i class="fas fa-file-invoice-dollar"></i> Generate Bill</a>
         <a href="${pageContext.request.contextPath}/cashier/ViewBillServlet"><i class="fas fa-file-invoice-dollar"></i>View Bills</a>
         <a href="help.jsp"><i class="fas fa-plus-circle"></i> Help Section</a>
     </div>

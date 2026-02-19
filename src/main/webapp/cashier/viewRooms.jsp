@@ -124,7 +124,7 @@
           <th>Room Name</th>
           <th>Description</th>
           <th>Price/Night</th>
-          <th>No. of Rooms</th>
+          <th>No. of Room</th>
           <th>Max Guests</th>
           <th>Status</th>
         </tr>
