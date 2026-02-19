@@ -11,7 +11,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cashier Dashboard</title>
+  <title>Receptionist Dashboard</title>
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
@@ -434,7 +434,7 @@
     <div class="row">
       <div class="col-12">
         <div class="content-header">
-          <h3>Cashier Dashboard</h3>
+          <h3>Receptionist Dashboard</h3>
         </div>
       </div>
     </div>
@@ -470,7 +470,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <a href="${pageContext.request.contextPath}/cashier/ViewReservationServlet">
+            <a href="${pageContext.request.contextPath}/receptionist/ViewReservationServlet">
               View Details <i class="fas fa-arrow-right"></i>
             </a>
           </div>
@@ -489,7 +489,7 @@
             </div>
           </div>
           <div class="card-footer">
-            <a href="${pageContext.request.contextPath}/cashier/generateBill.jsp">
+            <a href="${pageContext.request.contextPath}/receptionist/generateBill.jsp">
               Generate  <i class="fas fa-arrow-right"></i>
             </a>
           </div>
@@ -508,8 +508,26 @@
             </div>
           </div>
           <div class="card-footer">
-            <a href="${pageContext.request.contextPath}/cashier/ViewBillServlet">
+            <a href="${pageContext.request.contextPath}/receptionist/ViewBillServlet">
               View bills <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 mb-4">
+        <div class="card-box status-packed">
+          <div class="card-content">
+            <div class="card-info">
+              <h5>All Rooms</h5>
+            </div>
+            <div class="card-icon">
+              <i class="fas fa-bed"></i>
+            </div>
+          </div>
+          <div class="card-footer">
+            <a href="${pageContext.request.contextPath}/receptionist/ViewRoomServlet">
+              View Details <i class="fas fa-arrow-right"></i>
             </a>
           </div>
         </div>

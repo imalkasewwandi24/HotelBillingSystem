@@ -1,4 +1,4 @@
-package com.hotelbillingsystem.controllers.cashier;
+package com.hotelbillingsystem.controllers.receptionist;
 
 import com.hotelbillingsystem.models.Reservation;
 import com.hotelbillingsystem.services.ReservationService;
@@ -8,7 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebServlet("/cashier/EditReservationServlet")
+@WebServlet("/receptionist/EditReservationServlet")
 public class EditReservationServlet extends HttpServlet {
 
     private final ReservationService reservationService = new ReservationService();
@@ -21,7 +21,7 @@ public class EditReservationServlet extends HttpServlet {
 
             if (reservation != null) {
                 request.setAttribute("reservation", reservation);
-                request.getRequestDispatcher("/cashier/editReservation.jsp").forward(request, response);
+                request.getRequestDispatcher("/receptionist/editReservation.jsp").forward(request, response);
             } else {
                 HttpSession session = request.getSession();
                 session.setAttribute("errorMessage", "Reservation not found.");

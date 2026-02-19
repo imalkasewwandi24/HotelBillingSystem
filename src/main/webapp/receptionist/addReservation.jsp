@@ -85,7 +85,7 @@
         <% } %>
 
 
-        <form action="<%= request.getContextPath() %>/cashier/ReservationServlet" method="post">
+        <form action="<%= request.getContextPath() %>/receptionist/ReservationServlet" method="post">
             <div class="mb-3">
                 <label>Reservation ID</label>
                 <input type="text" name="reservationId" class="form-control" required>

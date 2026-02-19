@@ -123,7 +123,7 @@
                 <select name="usertype" class="form-select" required>
                     <option value="">Select user type</option>
                     <option value="0">Admin</option>
-                    <option value="1">Cashier</option>
+                    <option value="1">Receptionist</option>
                 </select>
             </div>
 

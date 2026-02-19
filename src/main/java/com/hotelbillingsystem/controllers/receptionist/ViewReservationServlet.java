@@ -1,4 +1,4 @@
-package com.hotelbillingsystem.controllers.cashier;
+package com.hotelbillingsystem.controllers.receptionist;
 
 import com.hotelbillingsystem.models.Reservation;
 import com.hotelbillingsystem.services.ReservationService;
@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/cashier/ViewReservationServlet")
+@WebServlet("/receptionist/ViewReservationServlet")
 public class ViewReservationServlet extends HttpServlet {
 
     private final ReservationService reservationService = new ReservationService();
@@ -53,12 +53,12 @@ public class ViewReservationServlet extends HttpServlet {
             }
 
             request.setAttribute("reservations", reservations);
-            request.getRequestDispatcher("/cashier/viewReservation.jsp").forward(request, response);
+            request.getRequestDispatcher("/receptionist/viewReservation.jsp").forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();
             session.setAttribute("errorMessage", "Error processing reservations.");
-            response.sendRedirect(request.getContextPath() + "/cashier/viewReservation.jsp");
+            response.sendRedirect(request.getContextPath() + "/receptionist/viewReservation.jsp");
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.hotelbillingsystem.controllers.cashier;
+package com.hotelbillingsystem.controllers.receptionist;
 
 import com.hotelbillingsystem.models.Bill;
 import com.hotelbillingsystem.services.BillService;
@@ -10,7 +10,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/cashier/ViewBillServlet")
+@WebServlet("/receptionist/ViewBillServlet")
 public class ViewBillServlet extends HttpServlet {
     private BillService billService = new BillServiceImpl();
 
@@ -22,6 +22,6 @@ public class ViewBillServlet extends HttpServlet {
         List<Bill> billList = billService.getAllBills();
         request.setAttribute("bills", billList);
 
-        request.getRequestDispatcher("/cashier/billRecords.jsp").forward(request, response);
+        request.getRequestDispatcher("/receptionist/billRecords.jsp").forward(request, response);
     }
 }

@@ -1,4 +1,4 @@
-package com.hotelbillingsystem.controllers.cashier;
+package com.hotelbillingsystem.controllers.receptionist;
 
 import com.hotelbillingsystem.models.Bill;
 import com.hotelbillingsystem.models.BillItem;
@@ -11,7 +11,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/cashier/BillPreviewServlet")
+@WebServlet("/receptionist/BillPreviewServlet")
 public class BillPreviewServlet extends HttpServlet {
 
     private BillService billService = new BillServiceImpl();
@@ -23,7 +23,7 @@ public class BillPreviewServlet extends HttpServlet {
 
         String billIdStr = request.getParameter("billId");
         if (billIdStr == null || billIdStr.isEmpty()) {
-            response.sendRedirect(request.getContextPath() + "/cashier/ViewBillServlet");
+            response.sendRedirect(request.getContextPath() + "/receptionist/ViewBillServlet");
             return;
         }
 
@@ -31,7 +31,7 @@ public class BillPreviewServlet extends HttpServlet {
         try {
             billId = Integer.parseInt(billIdStr);
         } catch (NumberFormatException e) {
-            response.sendRedirect(request.getContextPath() + "/cashier/ViewBillServlet");
+            response.sendRedirect(request.getContextPath() + "/receptionist/ViewBillServlet");
             return;
         }
 
@@ -40,13 +40,13 @@ public class BillPreviewServlet extends HttpServlet {
         List<BillItem> items = billService.getBillItemsByBillId(billId);
 
         if (bill == null) {
-            response.sendRedirect(request.getContextPath() + "/cashier/ViewBillServlet");
+            response.sendRedirect(request.getContextPath() + "/receptionist/ViewBillServlet");
             return;
         }
 
 
         request.setAttribute("bill", bill);
         request.setAttribute("items", items);
-        request.getRequestDispatcher("/cashier/billPreview.jsp").forward(request, response);
+        request.getRequestDispatcher("/receptionist/billPreview.jsp").forward(request, response);
     }
 }

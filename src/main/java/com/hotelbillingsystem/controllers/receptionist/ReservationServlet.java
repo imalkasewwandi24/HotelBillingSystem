@@ -1,4 +1,4 @@
-package com.hotelbillingsystem.controllers.cashier;
+package com.hotelbillingsystem.controllers.receptionist;
 
 import com.hotelbillingsystem.models.Reservation;
 import com.hotelbillingsystem.services.ReservationService;
@@ -10,16 +10,17 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-@WebServlet("/cashier/UpdateReservationServlet")
-public class UpdateReservationServlet extends HttpServlet {
+@WebServlet("/receptionist/ReservationServlet")
+public class ReservationServlet extends HttpServlet {
 
     private final ReservationService reservationService = new ReservationService();
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
         try {
-            int r_id = Integer.parseInt(request.getParameter("r_id"));
+            /* Read form data */
             String reservationId = request.getParameter("reservationId");
             String guestName = request.getParameter("guestName");
             String nic = request.getParameter("nic");
@@ -31,12 +32,13 @@ public class UpdateReservationServlet extends HttpServlet {
             String checkOut = request.getParameter("checkOutDate");
             String status = request.getParameter("status");
 
+            /* parse dates */
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             Date checkInDate = sdf.parse(checkIn);
             Date checkOutDate = sdf.parse(checkOut);
 
+            /* create reservation object */
             Reservation reservation = new Reservation();
-            reservation.setR_id(r_id);
             reservation.setReservationId(reservationId);
             reservation.setGuestName(guestName);
             reservation.setNic(nic);
@@ -48,18 +50,21 @@ public class UpdateReservationServlet extends HttpServlet {
             reservation.setCheckOutDate(checkOutDate);
             reservation.setStatus(status);
 
-            boolean updated = reservationService.updateReservation(reservation);
-            if (updated) {
-                session.setAttribute("successMessage", "Reservation updated successfully!");
+            /* add reservation */
+            boolean success = reservationService.addReservation(reservation);
+
+            if (success) {
+
+                response.sendRedirect(request.getContextPath() + "/receptionist/addReservation.jsp?success=true");
             } else {
-                session.setAttribute("errorMessage", "Failed to update reservation.");
+
+                response.sendRedirect(request.getContextPath() + "/receptionist/addReservation.jsp?error=reservation_failed");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            session.setAttribute("errorMessage", "Error updating reservation.");
-        }
 
-        response.sendRedirect("ViewReservationServlet");
+            response.sendRedirect(request.getContextPath() + "/receptionist/addReservation.jsp?error=reservation_failed");
+        }
     }
 }

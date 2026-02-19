@@ -26,13 +26,13 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             session.setAttribute("loggedUser", user.getUsername());
-            session.setAttribute("role", user.getUsertype()); // 0 = admin, 1 = cashier
+            session.setAttribute("role", user.getUsertype()); // 0 = admin, 1 = receptionist
             session.setMaxInactiveInterval(30 * 60);
 
             if (user.getUsertype() == 0) {
                 response.sendRedirect(request.getContextPath() + "/admin/adminDashboard.jsp");
             } else {
-                response.sendRedirect(request.getContextPath() + "/cashier/cashierDashboard.jsp");
+                response.sendRedirect(request.getContextPath() + "/receptionist/receptionistDashboard.jsp");
             }
         } else {
             // Wrong credentials → redirect with error parameter

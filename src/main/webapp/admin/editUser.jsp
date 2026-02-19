@@ -95,7 +95,7 @@
                 <label class="form-label">User Type</label>
                 <select name="usertype" class="form-select" required>
                     <option value="0" <%= editUser.getUsertype() == 0 ? "selected" : "" %>>Admin</option>
-                    <option value="1" <%= editUser.getUsertype() == 1 ? "selected" : "" %>>Cashier</option>
+                    <option value="1" <%= editUser.getUsertype() == 1 ? "selected" : "" %>>Receptionist</option>
                 </select>
             </div>
 

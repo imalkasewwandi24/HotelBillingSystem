@@ -96,7 +96,7 @@
                     <td><%= r.getCheckOutDate() %></td>
                     <td><%= r.getStatus() %></td>
                     <td>
-                        <a href="<%= request.getContextPath() %>/cashier/EditReservationServlet?r_id=<%= r.getR_id() %>"
+                        <a href="<%= request.getContextPath() %>/receptionist/EditReservationServlet?r_id=<%= r.getR_id() %>"
                            class="btn btn-action btn-edit"><i class="fas fa-pen"></i>Edit</a>
 
                         <a href="ViewReservationServlet?action=delete&r_id=<%= r.getR_id() %>"

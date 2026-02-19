@@ -185,11 +185,11 @@
     <div class="navbar-container">
         <div class="welcome-text">
             <i class="fa fa-user"></i>
-            <span>Welcome Cashier!</span>
+            <span>Welcome Receptionist!</span>
         </div>
         <div class="navbar-right">
             <div class="navbar-item dropdown">
-                <span><i class="fas fa-user-circle"></i> Cashier</span>
+                <span><i class="fas fa-user-circle"></i> Receptionist</span>
                 <div class="dropdown-content">
                     <a href="<%= request.getContextPath() %>/LogoutServlet">Logout</a>
                 </div>
