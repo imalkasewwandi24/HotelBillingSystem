@@ -98,7 +98,7 @@
 
     <!-- Add Room Form -->
     <div class="form-section">
-        <form action="${pageContext.request.contextPath}/cashier/AddBillItemServlet" method="post" class="row g-3">
+        <form action="${pageContext.request.contextPath}/receptionist/AddBillItemServlet" method="post" class="row g-3">
             <div class="col-md-6">
                 <label for="roomId" class="form-label">Select Room</label>
                 <select name="roomId" id="roomId" class="form-select" required onchange="showRoomDetails()">
@@ -137,7 +137,7 @@
     </div>
 
     <!-- Save Bill Form -->
-    <form action="${pageContext.request.contextPath}/cashier/SaveBillServlet" method="post" id="saveBillForm">
+    <form action="${pageContext.request.contextPath}/receptionist/SaveBillServlet" method="post" id="saveBillForm">
         <div class="mt-4">
             <h5>Bill Items</h5>
             <div class="table-responsive">
@@ -219,7 +219,7 @@
                         <option selected disabled>Select Reservation</option>
                         <%
                             for (Reservation r : reservations) {
-                                if ("CHECKED_IN".equals(r.getStatus())) {
+                                if ("CHECKED_OUT".equals(r.getStatus())) {
                         %>
                         <option value="<%= r.getReservationId() %>" data-guest="<%= r.getGuestName() %>">
                             <%= r.getReservationId() %>

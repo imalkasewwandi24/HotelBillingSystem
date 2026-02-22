@@ -142,7 +142,7 @@
         <% } %>
 
         <div class="alert-success">
-            <%= request.getAttribute("message") != null ? request.getAttribute("message") : "Use your account details to Sign in!!" %>
+            <%= request.getAttribute("message") != null ? request.getAttribute("message") : "Wishing you a productive and pleasant day ahead!" %>
         </div>
 
         <h2>Sign In</h2>
@@ -156,11 +156,6 @@
             <div class="mb-3">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" required>
-            </div>
-
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="remember">
-                <label class="form-check-label" for="remember">Remember me</label>
             </div>
 
             <button type="submit" class="btn btn-login mt-2">Sign In</button>
