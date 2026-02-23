@@ -168,9 +168,10 @@
                         <td><%= String.format("%.2f", room.getPricePerNight()) %></td>
                         <td class="rowTotal"><%= String.format("%.2f", total) %></td>
                         <td>
-                            <button type="button" class="btn btn-danger btn-sm" onclick="removeRow(this)">
+                            <a href="${pageContext.request.contextPath}/receptionist/RemoveBillItemServlet?roomId=<%= room.getRoomId() %>"
+                               class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash-alt"></i>
-                            </button>
+                            </a>
                         </td>
                     </tr>
                     <% } %>
