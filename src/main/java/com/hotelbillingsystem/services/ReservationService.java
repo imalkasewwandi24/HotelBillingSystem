@@ -15,7 +15,7 @@ public class ReservationService {
     /* Add a new reservation */
     public boolean addReservation(Reservation reservation) {
         try {
-            // Example validation: guest name must not be empty
+            // guest name must not be empty
             if (reservation.getGuestName() == null || reservation.getGuestName().trim().isEmpty()) {
                 return false;
             }

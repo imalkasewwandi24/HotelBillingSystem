@@ -33,7 +33,7 @@ public class UpdateUserServlet extends HttpServlet {
         user.setEmail(email);
         user.setUsertype(usertype);
 
-        // ✅ CORRECT password handling
+        //password handling
         if (password != null && !password.trim().isEmpty()) {
             user.setPassword(HashPassword.hashPassword(password)); // hash NEW password
         } else {
