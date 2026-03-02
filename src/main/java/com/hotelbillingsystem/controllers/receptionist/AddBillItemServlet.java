@@ -1,4 +1,4 @@
-package com.hotelbillingsystem.controllers.cashier;
+package com.hotelbillingsystem.controllers.receptionist;
 
 import com.hotelbillingsystem.models.BillItem;
 import com.hotelbillingsystem.models.Room;
@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet("/cashier/AddBillItemServlet")
+@WebServlet("/receptionist/AddBillItemServlet")
 public class AddBillItemServlet extends HttpServlet {
 
     private final RoomService roomService = new RoomService();

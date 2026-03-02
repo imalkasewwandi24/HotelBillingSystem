@@ -5,7 +5,13 @@
   Time: 7:41 PM
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*, com.hotelbillingsystem.models.*, com.hotelbillingsystem.services.*" %>
+<%@ page session="true" %>
+
+<%
+    RoomService roomService = new RoomService();
+    List<Room> rooms = roomService.getAllRooms();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -85,7 +91,7 @@
         <% } %>
 
 
-        <form action="<%= request.getContextPath() %>/cashier/ReservationServlet" method="post">
+        <form action="<%= request.getContextPath() %>/receptionist/ReservationServlet" method="post">
             <div class="mb-3">
                 <label>Reservation ID</label>
                 <input type="text" name="reservationId" class="form-control" required>
@@ -113,15 +119,17 @@
             <div class="mb-3">
                 <label>Room Code</label>
                 <select name="roomType" class="form-control" required>
-                    <option value="">-- Select Room Code --</option>
-                    <option value="R001_SINGLE">R001 - Single Room</option>
-                    <option value="R002_DOUBLE">R002 - Double Room</option>
-                    <option value="R003_TWIN">R003 - Twin Room</option>
-                    <option value="R004_DELUXE">R004 - Deluxe Room</option>
-                    <option value="R005_FAMILY">R005 - Family Room</option>
-                    <option value="R006_SUITE">R006 - Suite</option>
-                    <option value="R007_EXECUTIVE">R007 - Executive Suite</option>
-                    <option value="R008_PRESIDENTIAL">R008 - Presidential Suite</option>
+                    <option value="">Select Room Code</option>
+
+                    <% for (Room r : rooms) {
+                        if ("Available".equalsIgnoreCase(r.getRoomStatus())) { %>
+
+                    <option value="<%= r.getRoomCode() %>_<%= r.getRoomName() %>">
+                        <%= r.getRoomCode() %>_<%= r.getRoomName() %>
+                    </option>
+
+                    <%  }
+                    } %>
                 </select>
             </div>
             <div class="mb-3">

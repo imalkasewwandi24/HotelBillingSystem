@@ -1,4 +1,4 @@
-package com.hotelbillingsystem.controllers.cashier;
+package com.hotelbillingsystem.controllers.receptionist;
 
 import com.hotelbillingsystem.models.Room;
 import com.hotelbillingsystem.services.RoomService;
@@ -9,7 +9,7 @@ import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/cashier/ViewRoomServlet")
+@WebServlet("/receptionist/ViewRoomServlet")
 public class ViewRoomServlet extends HttpServlet {
 
     private final RoomService roomService = new RoomService();
@@ -27,12 +27,12 @@ public class ViewRoomServlet extends HttpServlet {
             }
 
             request.setAttribute("rooms", rooms);
-            request.getRequestDispatcher("/cashier/viewRooms.jsp").forward(request, response);
+            request.getRequestDispatcher("/receptionist/viewRooms.jsp").forward(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();
             request.getSession().setAttribute("errorMessage", "Error loading rooms.");
-            response.sendRedirect(request.getContextPath() + "/cashier/dashboard.jsp");
+            response.sendRedirect(request.getContextPath() + "/receptionist/dashboard.jsp");
         }
     }
 }

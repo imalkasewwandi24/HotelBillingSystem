@@ -5,8 +5,8 @@ import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.*;
 import java.io.IOException;
 
-@WebFilter("/cashier/*")
-public class CashierAuthFilter implements Filter {
+@WebFilter("/receptionist/*")
+public class ReceptionistAuthFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -22,7 +22,7 @@ public class CashierAuthFilter implements Filter {
             return;
         }
 
-        // Not cashier (1 = cashier)
+        // Not receptionist (1 = receptionist)
         Integer role = (Integer) session.getAttribute("role");
         if (role == null || role != 1) {
             session.invalidate();
@@ -35,7 +35,7 @@ public class CashierAuthFilter implements Filter {
         res.setHeader("Pragma", "no-cache");
         res.setDateHeader("Expires", 0);
 
-        // Cashier allowed
+        // receptionist allowed
         chain.doFilter(request, response);
     }
 }

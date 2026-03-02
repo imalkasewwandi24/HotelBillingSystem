@@ -89,7 +89,7 @@
       background: #e7993c;
     }
 
-    .role-cashier {
+    .role-receptionist {
       background: #6c757d;
     }
 
@@ -164,8 +164,8 @@
           <td><strong><%= user.getUsername() %></strong></td>
           <td><%= user.getEmail() %></td>
           <td>
-                            <span class="role-badge <%= user.getUsertype() == 0 ? "role-admin" : "role-cashier" %>">
-                                <%= user.getUsertype() == 0 ? "Admin" : "Cashier" %>
+                            <span class="role-badge <%= user.getUsertype() == 0 ? "role-admin" : "role-receptionist" %>">
+                                <%= user.getUsertype() == 0 ? "Admin" : "Receptionist" %>
                             </span>
           </td>
           <td>

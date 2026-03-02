@@ -14,35 +14,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Edit User</title>
+    <title>Edit User Account</title>
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         body {
             background-color: #fff7e6;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        .form-box {
-            max-width: 500px;
-            margin: 60px auto;
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        .content-wrapper {
+            margin-left: 280px;
+            padding: 90px 40px 40px;
+            display: flex;
+            justify-content: center;
         }
-        .header-text {
-            text-align: center;
-            color: #e7993c;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
+        .card-box {
+            width: 500px;
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            border: 1.5px solid #f1d6a3;
+        }
+        .card-box h4 {
+            margin-bottom: 25px;
+            color: #171616;
+            font-weight: 600;
+            text-align: left;
+        }
+        .form-control {
+            border-radius: 12px;
         }
         .btn-orange {
             background-color: #e7993c;
             color: white;
+            border-radius: 12px;
+            padding: 8px 20px;
+            font-weight: 500;
+            width: 100%;
         }
         .btn-orange:hover {
             background-color: #cc7e22;
+        }
+        .btn-secondary {
+            border-radius: 12px;
+            width: 100%;
+        }
+        .d-flex.gap-2 {
+            display: flex;
+            gap: 10px;
         }
     </style>
 </head>
@@ -52,11 +73,9 @@
 <%@ include file="layouts/sidebar.jsp" %>
 <%@ include file="layouts/navbar.jsp" %>
 
-<br><br><br><br>
-
-<div class="container">
-    <div class="form-box">
-        <div class="header-text">Edit User Account</div>
+<div class="content-wrapper">
+    <div class="card-box">
+        <h4>Edit User Account</h4>
 
         <form method="post" action="<%= request.getContextPath() %>/admin/UpdateUserServlet">
 
@@ -95,17 +114,17 @@
                 <label class="form-label">User Type</label>
                 <select name="usertype" class="form-select" required>
                     <option value="0" <%= editUser.getUsertype() == 0 ? "selected" : "" %>>Admin</option>
-                    <option value="1" <%= editUser.getUsertype() == 1 ? "selected" : "" %>>Cashier</option>
+                    <option value="1" <%= editUser.getUsertype() == 1 ? "selected" : "" %>>Receptionist</option>
                 </select>
             </div>
 
             <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-orange w-100">
-                    Update User
+                <button type="submit" class="btn btn-orange">
+                    <i class="fas fa-user-edit"></i> Update User
                 </button>
                 <a href="<%= request.getContextPath() %>/admin/UserManagementServlet"
-                   class="btn btn-secondary w-100">
-                    Cancel
+                   class="btn btn-orange">
+                    <i class="fas fa-times"></i> Cancel
                 </a>
             </div>
 

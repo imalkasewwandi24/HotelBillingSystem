@@ -128,7 +128,7 @@
         </td>
 
         <td>
-          <a href="<%= request.getContextPath() %>/cashier/BillPreviewServlet?billId=<%= b.getBillId() %>"
+          <a href="<%= request.getContextPath() %>/receptionist/BillPreviewServlet?billId=<%= b.getBillId() %>"
              class="btn btn-view btn-sm">
             View
           </a>
