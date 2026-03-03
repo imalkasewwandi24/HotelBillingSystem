@@ -19,7 +19,7 @@ public class DBConnection {
                 // Load MySQL JDBC Driver
                 Class.forName("com.mysql.cj.jdbc.Driver");
 
-                // Connect to your database
+                // Connect to database
                 connection = DriverManager.getConnection(
                         "jdbc:mysql://localhost:3306/resort_db?useSSL=false&serverTimezone=UTC",
                         "root", ""
