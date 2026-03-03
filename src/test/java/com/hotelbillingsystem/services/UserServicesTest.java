@@ -24,7 +24,7 @@ public class UserServicesTest {
 
         Assert.assertNotNull(user);
         Assert.assertEquals("Admin1", user.getUsername());
-        Assert.assertEquals("admin123@gmail.com", user.getEmail());
+        Assert.assertEquals("admin1ocean@gmail.com", user.getEmail());
     }
 
     // Test login with existing receptionist user
@@ -81,26 +81,26 @@ public class UserServicesTest {
     @Test
     public void testAddUser() {
         User user = new User();
-        user.setUsername("TestUser");
-        user.setPassword("test123");
-        user.setEmail("testuser@gmail.com");
+        user.setUsername("TestUser4");
+        user.setPassword("test1230");
+        user.setEmail("testuser4@gmail.com");
         user.setUsertype(1);
         Assert.assertTrue(userServices.register(user));
     }
 
     @Test
     public void testUpdateUser() {
-        User user = userServices.getUserById(29);
+        User user = userServices.getUserById(31);
         user.setEmail("updated@gmail.com");
         userServices.updateUser(user);
 
-        User updated = userServices.getUserById(29);
+        User updated = userServices.getUserById(31);
         Assert.assertEquals("updated@gmail.com", updated.getEmail());
     }
 
     @Test
     public void testDeleteUserById() {
-        int userIdToDelete = 29;
+        int userIdToDelete = 32;
 
         userServices.deleteUserById(userIdToDelete);
 

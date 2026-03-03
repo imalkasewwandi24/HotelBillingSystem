@@ -51,7 +51,7 @@ public class RoomServiceTest {
     // Test search rooms
     @Test
     public void testSearchRooms() {
-        String keyword = "Deluxe";
+        String keyword = "Single";
         List<Room> rooms = roomService.searchRooms(keyword);
 
         Assert.assertNotNull(rooms);
@@ -65,6 +65,8 @@ public class RoomServiceTest {
                     ", Status: " + r.getRoomStatus());
         }
     }
+
+    // Test add rooms
     @Test
     public void testAddRoom() {
         Room room = new Room();
@@ -77,22 +79,24 @@ public class RoomServiceTest {
         Assert.assertTrue(roomService.addRoom(room));
     }
 
+    // Test update rooms
     @Test
     public void testUpdateRoom() {
-        Room room = roomService.getRoomById(13);
+        Room room = roomService.getRoomById(6);
         room.setRoomName("Updated Name");
         room.setPricePerNight(6000);
 
         roomService.updateRoom(room);
 
-        Room updated = roomService.getRoomById(13);
+        Room updated = roomService.getRoomById(6);
         Assert.assertEquals("Updated Name", updated.getRoomName());
         Assert.assertEquals(6000, updated.getPricePerNight(), 0.01);
     }
 
+    // Test delet rooms
     @Test
     public void testDeleteRoomById() {
-        int roomIdToDelete = 13;
+        int roomIdToDelete = 15;
 
         roomService.deleteRoom(roomIdToDelete);
 
